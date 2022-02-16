@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import { useState } from 'react'
 
 const ContactForm = (props) => {
@@ -7,6 +6,7 @@ const ContactForm = (props) => {
     const [newName, setNewName] = useState('')
     const [newNum, setNewNum] = useState('')
     
+    //Lisää yhteystiedon ja tarkistaa ettei samannimistä yhteystietoa ole jo tallennettu
     const addName = (event) => {
         event.preventDefault()
     
@@ -43,7 +43,6 @@ const ContactForm = (props) => {
         //console.log(event.target.value)
         setNewNum(event.target.value)
     }
-
 
     return(
         <div>
