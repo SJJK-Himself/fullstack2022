@@ -23,7 +23,7 @@ const App = () => {
         <ContactForm persons={persons} setPersons={setPersons} personService={personService}/>
 
       <h2>Contacts</h2>
-        <ContactRender persons={persons}/>
+        <ContactRender persons={persons} setPersons={setPersons} personService={personService}/>
     </div>
   )
 }
