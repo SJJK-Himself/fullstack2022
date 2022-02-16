@@ -5,12 +5,11 @@ const Contact = ({person}) => {
   const handleDelete = () => {
     if(window.confirm("Confirm?")) {
       //MITÄ HELKKARIA TÄHÄN TULEE??
-      console.log("naicu")
+      console.log("Contact", person.name, "deleted")
     }
     else{
       console.log("Deletion canceled")
     }
-    
   }
 
   return (

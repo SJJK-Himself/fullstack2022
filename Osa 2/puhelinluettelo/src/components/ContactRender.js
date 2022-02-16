@@ -6,7 +6,7 @@ const ContactRender = (props) => {
     return(
         <ul>
             {props.persons.map(person => 
-                <Contact key={person.name} person={person}/>
+                <Contact key={person.name} person={person} personService={props.personService}/>
             )}
         </ul>
     )
