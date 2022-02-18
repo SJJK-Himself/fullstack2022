@@ -26,8 +26,15 @@ const ContactForm = (props) => {
 
         props.personService
         .create(personObject)
+
         .then(returnedPerson => {
             props.setPersons(props.persons.concat(returnedPerson))
+            props.setSuccessMessage(
+                `Contact '${newName}' was succesfully added`
+              )
+              setTimeout(() => {
+                props.setSuccessMessage(null)
+              }, 5000)
             setNewName('')
             setNewNum('')
         })
