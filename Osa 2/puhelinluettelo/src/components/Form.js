@@ -28,17 +28,20 @@ const ContactForm = (props) => {
         .create(personObject)
         .then(returnedPerson => {
             props.setPersons(props.persons.concat(returnedPerson))
-            props.setMessage(
-                `Contact '${newName}' was succesfully added`
-              )
+            props.setMessage({
+                text: `Added ${returnedPerson.name} to contacts`,
+                type: "success",
+              })
               setTimeout(() => {
                 props.setMessage(null)
               }, 5000)
             setNewName('')
             setNewNum('')
         })
-        .catch(error => {
-            console.log(error.response.data)
+        .catch((error) => {
+            props.setMessage({ text: error.response.data.error, type: "error" });
+            setTimeout(() => props.setMessage(null), 5000);
+            console.error(error);
         })
     }
     
