@@ -7,7 +7,18 @@ const totalLikes = (listWithOneBlog) => {
     return result
 }
 
+const favoriteBlog = (listWithManyBlogs) => {
+    const maxObj = listWithManyBlogs.reduce((max, obj) => (max.likes > obj.likes) ? max : obj);
+    const favBlog = {
+        title: maxObj.title,
+        author: maxObj.author,
+        likes: maxObj.likes
+    }
+    return favBlog
+}
+
 module.exports = {
     dummy,
-    totalLikes
+    totalLikes,
+    favoriteBlog
 }
