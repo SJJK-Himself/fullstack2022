@@ -25,6 +25,25 @@ test('All blogs returned in JSON format', async () => {
       .expect('Content-Type', /application\/json/)
 })
 
+test('A valid blog can be added ', async () => {
+    const newBlog = {
+      title: 'async/await simplifies making async calls',
+      author: 'Sam Testersson',
+      url: 'testblog3.com',
+      likes: 45
+    }
+  
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(201)
+      .expect('Content-Type', /application\/json/)
+  
+    const blogsAtEnd = await helper.blogsInMongo()
+    expect(blogsAtEnd).toHaveLength(helper.initialBlogs.length + 1)
+  })
+
+
 afterAll(() => {
   mongoose.connection.close()
 })
