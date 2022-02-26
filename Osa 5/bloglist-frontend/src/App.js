@@ -40,6 +40,11 @@ const App = () => {
       setPassword('')
   }
 
+  const handleLogOut = () => {
+    window.localStorage.clear()
+    setUser(null)
+  }
+
   const loginForm = () => (
     <form onSubmit={handleLogin}>
       <div>
@@ -72,7 +77,7 @@ const App = () => {
       {user === null ?
       loginForm() :
       <div>
-        <p>{user.name} logged in</p>
+        <p>{user.name} logged in <button onClick={handleLogOut}>Log out</button></p>
         <h2>blogs</h2>
         {blogs.map(blog =>
           <Blog key={blog.id} blog={blog}/>
