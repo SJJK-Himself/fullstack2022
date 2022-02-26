@@ -50,21 +50,21 @@ const App = () => {
     </form>      
   )
 
+
   return (
     <div>
       <h1>Bloglist</h1>
-
+      <h2>Login</h2>
       {user === null ?
       loginForm() :
       <div>
         <p>{user.name} logged in</p>
-      </div>
-    }
-
         <h2>blogs</h2>
         {blogs.map(blog =>
-          <Blog key={blog.id} blog={blog} />
+          <Blog key={blog.id} blog={blog}/>
         )}
+      </div>
+    }
     </div>
   )
 }
