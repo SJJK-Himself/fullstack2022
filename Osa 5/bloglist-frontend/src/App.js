@@ -29,6 +29,7 @@ const App = () => {
   const loginForm = () => (
     <form onSubmit={handleLogin}>
       <div>
+      <h2>Login</h2>
         username
           <input
           type="text"
@@ -54,7 +55,6 @@ const App = () => {
   return (
     <div>
       <h1>Bloglist</h1>
-      <h2>Login</h2>
       {user === null ?
       loginForm() :
       <div>
