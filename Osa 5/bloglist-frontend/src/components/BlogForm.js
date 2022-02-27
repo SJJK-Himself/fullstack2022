@@ -5,7 +5,8 @@ const BlogForm = ({
     url,
     handleTitleChange,
     handleAuthorChange,
-    handleUrlChange
+    handleUrlChange,
+    setBlogFormVisible
   }) => {
   return (
     <form onSubmit={addBlog}>

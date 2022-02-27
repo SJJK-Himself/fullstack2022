@@ -64,6 +64,8 @@ const App = () => {
         setAuthor('')
         setUrl('')
       })
+    
+      setBlogFormVisible(false)
   }
 
   const handleLogOut = () => {
@@ -114,6 +116,7 @@ const App = () => {
             handleAuthorChange={({ target }) => setAuthor(target.value)}
             handleUrlChange={({ target }) => setUrl(target.value)}
             addBlog={addBlog}
+            setBlogFormVisible={setBlogFormVisible}
           />
           <button onClick={() => setBlogFormVisible(false)}>Cancel</button>
         </div>
